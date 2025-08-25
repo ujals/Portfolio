@@ -45,7 +45,7 @@ export default function HeroSection() {
           >
             <div className="w-32 h-32 rounded-full mx-auto mb-6 glass-card overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200"
+                src="@assets/image_1756104709534.png"
                 alt="Kshetrimayum Ujal Singh - IoT Engineer"
                 className="w-full h-full object-cover"
                 data-testid="hero-profile-image"
@@ -57,7 +57,7 @@ export default function HeroSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
-            className="text-5xl md:text-7xl font-bold mb-6 hero-gradient"
+            className="text-5xl md:text-7xl font-extralight mb-6 hero-gradient"
             data-testid="hero-title"
           >
             Kshetrimayum Ujal Singh
@@ -67,7 +67,7 @@ export default function HeroSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.7 }}
-            className="text-xl md:text-2xl text-gray-600 mb-4"
+            className="text-xl md:text-2xl font-light text-gray-600 mb-4"
             data-testid="hero-subtitle"
           >
             IoT Engineer & Solutions Architect
@@ -77,7 +77,7 @@ export default function HeroSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.9 }}
-            className="text-lg text-gray-500 mb-8 max-w-2xl mx-auto"
+            className="text-lg font-light text-gray-500 mb-8 max-w-2xl mx-auto"
             data-testid="hero-description"
           >
             3+ years of experience in end-to-end industrial automation solutions. Expert in Modbus, LoRaWAN, MQTT, and cloud integrations.

@@ -57,10 +57,10 @@ export default function ProjectsSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6" data-testid="projects-title">
+          <h2 className="text-4xl md:text-5xl font-extralight text-gray-800 mb-6" data-testid="projects-title">
             Featured Projects
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto" data-testid="projects-subtitle">
+          <p className="text-xl font-light text-gray-600 max-w-3xl mx-auto" data-testid="projects-subtitle">
             Industrial IoT solutions that drive efficiency and innovation
           </p>
         </motion.div>
@@ -85,7 +85,7 @@ export default function ProjectsSection() {
                 <div className="absolute inset-0 bg-white/10 group-hover:bg-white/5 transition-colors duration-300" />
               </div>
 
-              <h3 className="text-xl font-bold text-gray-800 mb-3" data-testid={`project-title-${index}`}>
+              <h3 className="text-xl font-light text-gray-800 mb-3" data-testid={`project-title-${index}`}>
                 {project.title}
               </h3>
               
@@ -114,7 +114,7 @@ export default function ProjectsSection() {
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center text-gray-700 hover:text-gray-900 font-medium transition-colors duration-300"
+                    className="inline-flex items-center text-gray-700 hover:text-gray-900 font-light transition-colors duration-300"
                     data-testid={`project-link-${index}`}
                   >
                     View <ExternalLink className="ml-1 w-4 h-4" />

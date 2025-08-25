@@ -53,10 +53,10 @@ export default function AboutSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6" data-testid="about-title">
+          <h2 className="text-4xl md:text-5xl font-extralight text-gray-800 mb-6" data-testid="about-title">
             About Me
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto" data-testid="about-subtitle">
+          <p className="text-xl font-light text-gray-600 max-w-3xl mx-auto" data-testid="about-subtitle">
             Passionate IoT Engineer with expertise in industrial automation and smart solutions
           </p>
         </motion.div>
@@ -68,12 +68,12 @@ export default function AboutSection() {
             viewport={{ once: true }}
             className="glass-panel rounded-2xl p-8"
           >
-            <h3 className="text-2xl font-bold text-gray-800 mb-6" data-testid="summary-title">
+            <h3 className="text-2xl font-light text-gray-800 mb-6" data-testid="summary-title">
               Professional Summary
             </h3>
             <div className="space-y-6">
               <div className="glass-card rounded-xl p-6">
-                <h4 className="font-semibold text-gray-800 mb-3">Education</h4>
+                <h4 className="font-light text-gray-800 mb-3">Education</h4>
                 <div className="space-y-2 text-gray-600">
                   <p><strong>Bachelor of Computer Science Engineering</strong></p>
                   <p>Anna University | 2020 | 1st Division</p>
@@ -81,7 +81,7 @@ export default function AboutSection() {
                 </div>
               </div>
               <div className="glass-card rounded-xl p-6">
-                <h4 className="font-semibold text-gray-800 mb-3">Core Expertise</h4>
+                <h4 className="font-light text-gray-800 mb-3">Core Expertise</h4>
                 <ul className="text-gray-600 space-y-2">
                   <li>• End-to-end industrial automation solutions</li>
                   <li>• LoRaWAN, Modbus RS485, MQTT protocols</li>
@@ -108,8 +108,8 @@ export default function AboutSection() {
                     <exp.icon className="w-5 h-5 text-gray-600" />
                   </div>
                   <div className="flex-1">
-                    <h4 className="font-bold text-gray-800">{exp.company}</h4>
-                    <p className="text-sm text-gray-600 font-medium">{exp.role}</p>
+                    <h4 className="font-light text-gray-800">{exp.company}</h4>
+                    <p className="text-sm text-gray-600 font-light">{exp.role}</p>
                     <p className="text-sm text-gray-500 mb-2">{exp.period} | {exp.location}</p>
                     <p className="text-gray-600 text-sm mb-3">{exp.description}</p>
                     <ul className="text-xs text-gray-500 space-y-1">

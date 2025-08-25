@@ -41,10 +41,10 @@ export default function SkillsSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6" data-testid="skills-title">
+          <h2 className="text-4xl md:text-5xl font-extralight text-gray-800 mb-6" data-testid="skills-title">
             Technical Expertise
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto" data-testid="skills-subtitle">
+          <p className="text-xl font-light text-gray-600 max-w-3xl mx-auto" data-testid="skills-subtitle">
             Comprehensive skill set spanning IoT protocols, cloud platforms, and development technologies
           </p>
         </motion.div>
@@ -64,7 +64,7 @@ export default function SkillsSection() {
                 <div className="w-12 h-12 glass-card rounded-full flex items-center justify-center mb-4">
                   <category.icon className="w-6 h-6 text-gray-600" />
                 </div>
-                <h3 className="text-lg font-bold text-gray-800 mb-4" data-testid={`skill-category-title-${index}`}>
+                <h3 className="text-lg font-light text-gray-800 mb-4" data-testid={`skill-category-title-${index}`}>
                   {category.title}
                 </h3>
                 <ul className="space-y-2 text-gray-600">
@@ -85,7 +85,7 @@ export default function SkillsSection() {
             viewport={{ once: true }}
             className="mt-16"
           >
-            <h3 className="text-2xl font-bold text-gray-800 text-center mb-8" data-testid="certifications-title">
+            <h3 className="text-2xl font-light text-gray-800 text-center mb-8" data-testid="certifications-title">
               Certifications
             </h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -100,7 +100,7 @@ export default function SkillsSection() {
                   data-testid={`certification-${index}`}
                 >
                   <Award className="w-8 h-8 text-gray-600 mx-auto mb-3" />
-                  <p className="text-sm font-medium text-gray-800" data-testid={`cert-name-${index}`}>
+                  <p className="text-sm font-light text-gray-800" data-testid={`cert-name-${index}`}>
                     {cert.name}
                   </p>
                   <p className="text-xs text-gray-500" data-testid={`cert-provider-${index}`}>

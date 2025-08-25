@@ -12,7 +12,7 @@ export default function Footer() {
           className="text-center"
         >
           <div className="glass-card rounded-2xl p-8 max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold text-gray-800 mb-4" data-testid="footer-name">
+            <h3 className="text-2xl font-light text-gray-800 mb-4" data-testid="footer-name">
               Kshetrimayum Ujal Singh
             </h3>
             <p className="text-gray-600 mb-6" data-testid="footer-title">

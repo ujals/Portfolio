@@ -38,7 +38,7 @@ export default function Navigation() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="text-xl font-bold text-gray-800"
+            className="text-xl font-light text-gray-800"
             data-testid="nav-logo"
           >
             Ujal Singh
@@ -53,7 +53,7 @@ export default function Navigation() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3 + index * 0.1 }}
                   onClick={() => scrollToSection(item.toLowerCase())}
-                  className="text-gray-700 hover:text-gray-900 transition-colors duration-300 font-medium"
+                  className="text-gray-700 hover:text-gray-900 transition-colors duration-300 font-light"
                   data-testid={`nav-link-${item.toLowerCase()}`}
                 >
                   {item}
@@ -88,7 +88,7 @@ export default function Navigation() {
                 <button
                   key={item}
                   onClick={() => scrollToSection(item.toLowerCase())}
-                  className="block w-full text-left py-3 text-gray-700 hover:text-gray-900 transition-colors duration-300"
+                  className="block w-full text-left py-3 text-gray-700 hover:text-gray-900 transition-colors duration-300 font-light"
                   data-testid={`mobile-nav-link-${item.toLowerCase()}`}
                 >
                   {item}

@@ -71,10 +71,10 @@ export default function ContactSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6" data-testid="contact-title">
+          <h2 className="text-4xl md:text-5xl font-extralight text-gray-800 mb-6" data-testid="contact-title">
             Let's Connect
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto" data-testid="contact-subtitle">
+          <p className="text-xl font-light text-gray-600 max-w-3xl mx-auto" data-testid="contact-subtitle">
             Ready to discuss IoT solutions and automation projects
           </p>
         </motion.div>
@@ -88,7 +88,7 @@ export default function ContactSection() {
               viewport={{ once: true }}
               className="glass-panel rounded-2xl p-8"
             >
-              <h3 className="text-2xl font-bold text-gray-800 mb-8" data-testid="contact-info-title">
+              <h3 className="text-2xl font-light text-gray-800 mb-8" data-testid="contact-info-title">
                 Get In Touch
               </h3>
               <div className="space-y-6">
@@ -106,7 +106,7 @@ export default function ContactSection() {
                       <info.icon className="w-5 h-5 text-gray-600" />
                     </div>
                     <div>
-                      <p className="font-medium text-gray-800">{info.label}</p>
+                      <p className="font-light text-gray-800">{info.label}</p>
                       {info.href ? (
                         <a
                           href={info.href}
@@ -133,7 +133,7 @@ export default function ContactSection() {
               viewport={{ once: true }}
               className="glass-panel rounded-2xl p-8"
             >
-              <h3 className="text-2xl font-bold text-gray-800 mb-8" data-testid="contact-form-title">
+              <h3 className="text-2xl font-light text-gray-800 mb-8" data-testid="contact-form-title">
                 Send a Message
               </h3>
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -188,7 +188,7 @@ export default function ContactSection() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full p-4 glass-button rounded-xl text-gray-800 font-semibold hover:bg-white/25 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full p-4 glass-button rounded-xl text-gray-800 font-light hover:bg-white/25 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                   data-testid="button-send-message"
                 >
                   {isSubmitting ? "Sending..." : "Send Message"}
