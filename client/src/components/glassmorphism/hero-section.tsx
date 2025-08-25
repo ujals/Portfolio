@@ -35,7 +35,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="glass-panel rounded-3xl p-12 max-w-4xl mx-auto"
+          className="hero-glass-panel rounded-3xl p-12 max-w-4xl mx-auto"
         >
           <motion.div
             initial={{ scale: 0 }}
