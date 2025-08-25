@@ -29,11 +29,11 @@ export default function Home() {
           minWidth: 200.00,
           scale: 1.00,
           scaleMobile: 1.00,
-          color: 0x3f81ff,
+          color: 0xffffff,
           backgroundColor: 0xffffff,
-          points: 10,
-          maxDistance: 20,
-          spacing: 15,
+          points: 12,
+          maxDistance: 25,
+          spacing: 18,
           showDots: true
         });
       }

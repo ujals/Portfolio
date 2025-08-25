@@ -45,7 +45,7 @@ export default function HeroSection() {
           >
             <div className="w-32 h-32 rounded-full mx-auto mb-6 glass-card overflow-hidden">
               <img
-                src="@assets/image_1756104984265.png"
+                src="@assets/1719932364779_1756105042363.jpg"
                 alt="Kshetrimayum Ujal Singh - IoT Engineer"
                 className="w-full h-full object-cover"
                 data-testid="hero-profile-image"
