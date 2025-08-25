@@ -163,11 +163,11 @@
   }
 
   .hero-glass-panel {
-    background: hsla(0, 0%, 100%, 0.01);
-    backdrop-filter: blur(60px);
-    -webkit-backdrop-filter: blur(60px);
-    border: 1px solid hsla(0, 0%, 100%, 0.15);
-    box-shadow: 0 30px 80px hsla(0, 0%, 0%, 0.05), inset 0 1px 0 hsla(0, 0%, 100%, 0.1);
+    background: hsla(0, 0%, 100%, 0.005);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid hsla(0, 0%, 100%, 0.08);
+    box-shadow: 0 20px 40px hsla(0, 0%, 0%, 0.02), inset 0 1px 0 hsla(0, 0%, 100%, 0.05);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
