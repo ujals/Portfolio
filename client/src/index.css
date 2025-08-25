@@ -51,12 +51,12 @@
   --tracking-normal: 0em;
   --spacing: 0.25rem;
   
-  /* Glassmorphism Variables */
-  --glass-bg: hsla(0, 0%, 100%, 0.1);
-  --glass-border: hsla(0, 0%, 100%, 0.2);
-  --glass-shadow: hsla(0, 0%, 0%, 0.06);
-  --glass-hover-bg: hsla(0, 0%, 100%, 0.25);
-  --glass-backdrop-blur: 20px;
+  /* Enhanced Glassmorphism Variables */
+  --glass-bg: hsla(0, 0%, 100%, 0.05);
+  --glass-border: hsla(0, 0%, 100%, 0.3);
+  --glass-shadow: hsla(0, 0%, 0%, 0.1);
+  --glass-hover-bg: hsla(0, 0%, 100%, 0.15);
+  --glass-backdrop-blur: 30px;
 }
 
 .dark {
@@ -120,37 +120,55 @@
   body {
     @apply font-sans antialiased bg-background text-foreground;
     scroll-behavior: smooth;
+    position: relative;
   }
 
   html {
     scroll-behavior: smooth;
+  }
+
+  /* Vanta Background */
+  #vanta-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  }
+
+  #root {
+    position: relative;
+    z-index: 1;
   }
 }
 
 @layer components {
   /* Glassmorphism Base Styles */
   .glass-panel {
-    background: var(--glass-bg);
-    backdrop-filter: blur(var(--glass-backdrop-blur));
-    -webkit-backdrop-filter: blur(var(--glass-backdrop-blur));
-    border: 1px solid var(--glass-border);
-    box-shadow: 0 8px 32px var(--glass-shadow);
+    background: hsla(0, 0%, 100%, 0.08);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    border: 1px solid hsla(0, 0%, 100%, 0.4);
+    box-shadow: 0 12px 40px hsla(0, 0%, 0%, 0.12), inset 0 1px 0 hsla(0, 0%, 100%, 0.3);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .glass-card {
-    background: hsla(0, 0%, 100%, 0.15);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid hsla(0, 0%, 100%, 0.3);
-    box-shadow: 0 4px 24px hsla(0, 0%, 0%, 0.08);
+    background: hsla(0, 0%, 100%, 0.06);
+    backdrop-filter: blur(35px);
+    -webkit-backdrop-filter: blur(35px);
+    border: 1px solid hsla(0, 0%, 100%, 0.35);
+    box-shadow: 0 8px 32px hsla(0, 0%, 0%, 0.12), inset 0 1px 0 hsla(0, 0%, 100%, 0.25);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .glass-card:hover {
-    background: var(--glass-hover-bg);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 40px hsla(0, 0%, 0%, 0.12);
+    background: hsla(0, 0%, 100%, 0.12);
+    transform: translateY(-3px);
+    box-shadow: 0 16px 48px hsla(0, 0%, 0%, 0.16), inset 0 1px 0 hsla(0, 0%, 100%, 0.35);
+    border-color: hsla(0, 0%, 100%, 0.45);
   }
 
   .glass-floating {
@@ -161,25 +179,26 @@
   }
 
   .glass-nav {
-    background: hsla(0, 0%, 100%, 0.08);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    border-bottom: 1px solid hsla(0, 0%, 100%, 0.2);
+    background: hsla(0, 0%, 100%, 0.04);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border-bottom: 1px solid hsla(0, 0%, 100%, 0.3);
+    box-shadow: 0 2px 16px hsla(0, 0%, 0%, 0.06);
   }
 
   .glass-nav-scrolled {
-    background: hsla(0, 0%, 100%, 0.12);
-    backdrop-filter: blur(32px);
-    -webkit-backdrop-filter: blur(32px);
-    border-bottom: 1px solid hsla(0, 0%, 100%, 0.3);
-    box-shadow: 0 4px 24px hsla(0, 0%, 0%, 0.06);
+    background: hsla(0, 0%, 100%, 0.08);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    border-bottom: 1px solid hsla(0, 0%, 100%, 0.4);
+    box-shadow: 0 8px 32px hsla(0, 0%, 0%, 0.12);
   }
 
   .glass-button {
-    background: hsla(0, 0%, 100%, 0.15);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid hsla(0, 0%, 100%, 0.3);
+    background: hsla(0, 0%, 100%, 0.08);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid hsla(0, 0%, 100%, 0.4);
     padding: 1rem 2rem;
     border-radius: 9999px;
     font-weight: 600;
@@ -187,26 +206,29 @@
     align-items: center;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     color: hsl(210, 25%, 7.8431%);
+    box-shadow: 0 4px 24px hsla(0, 0%, 0%, 0.1), inset 0 1px 0 hsla(0, 0%, 100%, 0.3);
   }
 
   .glass-button:hover {
-    background: hsla(0, 0%, 100%, 0.25);
-    transform: translateY(-1px);
-    box-shadow: 0 8px 32px hsla(0, 0%, 0%, 0.12);
+    background: hsla(0, 0%, 100%, 0.16);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px hsla(0, 0%, 0%, 0.15), inset 0 1px 0 hsla(0, 0%, 100%, 0.4);
+    border-color: hsla(0, 0%, 100%, 0.5);
   }
 
   .glass-input {
-    background: hsla(0, 0%, 100%, 0.12);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid hsla(0, 0%, 100%, 0.25);
+    background: hsla(0, 0%, 100%, 0.06);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid hsla(0, 0%, 100%, 0.3);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 16px hsla(0, 0%, 0%, 0.08), inset 0 1px 0 hsla(0, 0%, 100%, 0.2);
   }
 
   .glass-input:focus {
-    background: hsla(0, 0%, 100%, 0.18);
-    border-color: hsla(0, 0%, 100%, 0.4);
-    box-shadow: 0 0 0 2px hsla(0, 0%, 100%, 0.2);
+    background: hsla(0, 0%, 100%, 0.12);
+    border-color: hsla(0, 0%, 100%, 0.45);
+    box-shadow: 0 8px 24px hsla(0, 0%, 0%, 0.12), 0 0 0 2px hsla(0, 0%, 100%, 0.3);
   }
 
   /* Hero Gradient Text */
