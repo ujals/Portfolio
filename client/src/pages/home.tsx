@@ -19,8 +19,8 @@ export default function Home() {
     let vantaEffect: any = null;
     
     const initVanta = () => {
-      if (window.VANTA && window.VANTA.NET) {
-        vantaEffect = window.VANTA.NET({
+      if (window.VANTA && window.VANTA.GLOBE) {
+        vantaEffect = window.VANTA.GLOBE({
           el: "#vanta-background",
           mouseControls: true,
           touchControls: true,
@@ -30,11 +30,10 @@ export default function Home() {
           scale: 1.00,
           scaleMobile: 1.00,
           color: 0xcccccc,
+          color2: 0xe6e6e6,
           backgroundColor: 0xffffff,
-          points: 15,
-          maxDistance: 30,
-          spacing: 20,
-          showDots: true
+          size: 1.5,
+          spacing: 16.00
         });
       }
     };
