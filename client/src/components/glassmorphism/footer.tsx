@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, Linkedin, Phone } from "lucide-react";
+import { Mail, Linkedin, Phone, Github } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -17,6 +17,7 @@ export default function Footer() {
             whileTap={{ scale: 0.95 }}
             className="glass-panel w-10 h-10 rounded-full flex items-center justify-center hover:bg-white/20 transition-all duration-300"
             data-testid="footer-email"
+            aria-label="Email"
           >
             <Mail className="w-5 h-5 text-gray-600" />
           </motion.a>
@@ -29,8 +30,22 @@ export default function Footer() {
             whileTap={{ scale: 0.95 }}
             className="glass-panel w-10 h-10 rounded-full flex items-center justify-center hover:bg-white/20 transition-all duration-300"
             data-testid="footer-linkedin"
+            aria-label="LinkedIn"
           >
             <Linkedin className="w-5 h-5 text-gray-600" />
+          </motion.a>
+
+          <motion.a
+            href="https://github.com/ujals"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            className="glass-panel w-10 h-10 rounded-full flex items-center justify-center hover:bg-white/20 transition-all duration-300"
+            data-testid="footer-github"
+            aria-label="GitHub"
+          >
+            <Github className="w-5 h-5 text-gray-600" />
           </motion.a>
 
           <motion.a
@@ -39,6 +54,7 @@ export default function Footer() {
             whileTap={{ scale: 0.95 }}
             className="glass-panel w-10 h-10 rounded-full flex items-center justify-center hover:bg-white/20 transition-all duration-300"
             data-testid="footer-phone"
+            aria-label="Phone"
           >
             <Phone className="w-5 h-5 text-gray-600" />
           </motion.a>
