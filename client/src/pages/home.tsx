@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import Navigation from "@/components/glassmorphism/navigation";
-import HeroSection from "@/components/glassmorphism/hero-section";
+import { HeroSection } from "@/components/glassmorphism/hero-section";
 import AboutSection from "@/components/glassmorphism/about-section";
 import ProjectsSection from "@/components/glassmorphism/projects-section";
 import SkillsSection from "@/components/glassmorphism/skills-section";

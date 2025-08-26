@@ -95,7 +95,7 @@
   --font-sans: 'Inter', 'Open Sans', sans-serif;
   --font-serif: Georgia, serif;
   --font-mono: Menlo, monospace;
-  --radius: 1.3rem;
+  --radius: 1.2rem;
   --shadow-2xs: 0px 2px 0px 0px hsl(202.8169, 89.1213%, 53.1373%, 0.00);
   --shadow-xs: 0px 2px 0px 0px hsl(202.8169, 89.1213%, 53.1373%, 0.00);
   --shadow-sm: 0px 2px 0px 0px hsl(202.8169, 89.1213%, 53.1373%, 0.00), 0px 1px 2px -1px hsl(202.8169, 89.1213%, 53.1373%, 0.00);
@@ -152,6 +152,26 @@
 }
 
 @layer components {
+  /* 3D Perspective */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  
+  /* Transform Styles */
+  .rotate-y-6 {
+    transform: rotateY(6deg);
+  }
+  
+  .rotate-x-2 {
+    transform: rotateX(2deg);
+  }
+  
+  /* Smooth 3D Transforms */
+  .transform-3d {
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+  }
+
   /* Glassmorphism Base Styles */
   .glass-panel {
     background: hsla(0, 0%, 100%, 0.08);
@@ -164,7 +184,7 @@
 
   .hero-glass-panel {
     background: transparent;
-    border: 1px solid hsla(0, 0%, 100%, 0.01);
+    border: 0.5px solid hsla(0, 0%, 100%, 0.01);
     box-shadow: none;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
@@ -186,71 +206,93 @@
   }
 
   .glass-floating {
-    background: hsla(0, 0%, 100%, 0.08);
+    background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border: 1px solid hsla(0, 0%, 100%, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
   }
 
-  .glass-nav {
-    background: hsla(0, 0%, 100%, 0.04);
-    backdrop-filter: blur(30px);
-    -webkit-backdrop-filter: blur(30px);
-    border-bottom: 1px solid hsla(0, 0%, 100%, 0.3);
-    box-shadow: 0 2px 16px hsla(0, 0%, 0%, 0.06);
+  .hero-glass-panel {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
   }
 
-  .glass-nav-scrolled {
-    background: hsla(0, 0%, 100%, 0.08);
-    backdrop-filter: blur(40px);
-    -webkit-backdrop-filter: blur(40px);
-    border-bottom: 1px solid hsla(0, 0%, 100%, 0.4);
-    box-shadow: 0 8px 32px hsla(0, 0%, 0%, 0.12);
+  .dark .hero-glass-panel {
+    background: rgba(17, 24, 39, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .glass-button {
-    background: hsla(0, 0%, 100%, 0.08);
-    backdrop-filter: blur(25px);
-    -webkit-backdrop-filter: blur(25px);
-    border: 1px solid hsla(0, 0%, 100%, 0.4);
-    padding: 1rem 2rem;
-    border-radius: 9999px;
-    font-weight: 300;
     display: inline-flex;
     align-items: center;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    font-weight: 500;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    color: hsl(210, 25%, 7.8431%);
-    box-shadow: 0 4px 24px hsla(0, 0%, 0%, 0.1), inset 0 1px 0 hsla(0, 0%, 100%, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #4b5563;
   }
 
   .glass-button:hover {
-    background: hsla(0, 0%, 100%, 0.16);
+    background: rgba(255, 255, 255, 0.2);
     transform: translateY(-2px);
-    box-shadow: 0 12px 40px hsla(0, 0%, 0%, 0.15), inset 0 1px 0 hsla(0, 0%, 100%, 0.4);
-    border-color: hsla(0, 0%, 100%, 0.5);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
 
-  .glass-input {
-    background: hsla(0, 0%, 100%, 0.06);
-    backdrop-filter: blur(25px);
-    -webkit-backdrop-filter: blur(25px);
-    border: 1px solid hsla(0, 0%, 100%, 0.3);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 4px 16px hsla(0, 0%, 0%, 0.08), inset 0 1px 0 hsla(0, 0%, 100%, 0.2);
+  .dark .glass-button {
+    color: #e5e7eb;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
 
-  .glass-input:focus {
-    background: hsla(0, 0%, 100%, 0.12);
-    border-color: hsla(0, 0%, 100%, 0.45);
-    box-shadow: 0 8px 24px hsla(0, 0%, 0%, 0.12), 0 0 0 2px hsla(0, 0%, 100%, 0.3);
+  .dark .glass-button:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  /* Shimmer Effect Animation */
+  @keyframes shimmer {
+    0% {
+      transform: rotate(30deg) translateX(-25%) translateY(-25%);
+    }
+    100% {
+      transform: rotate(30deg) translateX(25%) translateY(25%);
+    }
   }
 
   /* Hero Gradient Text */
   .hero-gradient {
-    background: linear-gradient(135deg, hsl(210, 25%, 7.8431%) 0%, hsl(210, 15%, 25%) 100%);
+    background: linear-gradient(90deg, #1a1a1a 0%, #4b5563 50%, #1a1a1a 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-clip: text;
+    background-size: 200% auto;
+    animation: gradient 8s ease infinite;
+  }
+
+  .dark .hero-gradient {
+    background: linear-gradient(90deg, #ffffff 0%, #9ca3af 50%, #ffffff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% auto;
+    animation: gradient 8s ease infinite;
+  }
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
   }
 
   /* Smooth animations */
@@ -268,6 +310,107 @@
 
   .animate-fade-in {
     animation: fadeIn 1s ease-out;
+  }
+
+  /* Improved Water Ripple Effect */
+  @keyframes ripple {
+    0% {
+      transform: scale(0.8) translate(-50%, -50%);
+      opacity: 0;
+    }
+    10% {
+      opacity: 0.6;
+    }
+    100% {
+      transform: scale(1.5) translate(-50%, -50%);
+      opacity: 0;
+    }
+  }
+
+  /* Profile Picture Container */
+  .group:hover .ripple {
+    opacity: 1;
+  }
+
+  .ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.7) 0%,
+      rgba(255, 255, 255, 0) 70%
+    );
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    animation: ripple 2.5s ease-out infinite paused;
+  }
+
+  /* Ensure name stays in one line */
+  .hero-name {
+    white-space: nowrap;
+    overflow: visible;
+    text-overflow: clip;
+    display: inline-block;
+    width: auto;
+    max-width: 100%;
+  }
+
+  /* Responsive text sizing */
+  @media (max-width: 768px) {
+    .hero-name {
+      font-size: 2.5rem;
+    }
+  }
+
+  /* 3D Water Container */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  /* Group hover effect for water */
+  .group:hover .water-ripple {
+    animation-play-state: running;
+    opacity: 0.7;
+  }
+
+  /* Water ripple element */
+  .water-ripple {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.7) 0%,
+      rgba(255, 255, 255, 0) 70%
+    );
+    transform: translateY(100%) scaleX(1);
+    animation: ripple 2.5s ease-out infinite paused;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+
+  /* Hero Title Adjustments */
+  .hero-title {
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-title span {
+    display: block;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 2.5rem;
+    }
   }
 }
 
@@ -334,4 +477,118 @@
 :focus-visible {
   outline: 2px solid hsla(0, 0%, 100%, 0.5);
   outline-offset: 2px;
+}
+
+/* Hero Section */
+#home {
+  background: transparent;
+  position: relative;
+  color: #333;
+}
+
+/* Text Styling */
+#home h1 {
+  font-size: 3rem;
+  font-weight: 300;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+  color: #111;
+}
+
+#home p {
+  font-weight: 300;
+  color: #333;
+}
+
+/* Profile Picture */
+#home .relative {
+  margin: 0 auto 1.5rem;
+  width: 14rem;
+  height: 14rem;
+  border-radius: 50%;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+#home .relative::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  padding: 2px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.2) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+#home img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  transform: scale(1.1);
+}
+
+#home .relative:hover img {
+  transform: scale(1.15);
+}
+
+/* Experience Text */
+#home p:last-of-type {
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Buttons */
+#home a {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.75rem 2rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  background: white;
+  color: #1f2937;
+  text-decoration: none;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+#home a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  background: #f3f4f6;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  #home h1 {
+    font-size: 2.25rem;
+  }
+  
+  #home p {
+    font-size: 1.1rem;
+  }
+  
+  #home .relative {
+    width: 12rem;
+    height: 12rem;
+  }
+}
+
+/* Shimmer Animation */
+@keyframes shimmer {
+  0% {
+    transform: rotate(30deg) translateX(-25%) translateY(-25%);
+  }
+  100% {
+    transform: rotate(30deg) translateX(25%) translateY(25%);
+  }
 }

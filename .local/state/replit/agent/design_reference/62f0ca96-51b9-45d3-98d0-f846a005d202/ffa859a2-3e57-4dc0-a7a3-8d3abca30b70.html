@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kshetrimayum Ujal Singh - IoT Engineer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                fontFamily: {
+                    'inter': ['Inter', 'sans-serif'],
+                },
+                backdropBlur: {
+                    'xs': '2px',
+                    'sm': '4px',
+                    'md': '8px',
+                    'lg': '16px',
+                    'xl': '32px',
+                },
+                animation: {
+                    'float': 'float 6s ease-in-out infinite',
+                    'fadeInUp': 'fadeInUp 1s ease-out',
+                    'slideInLeft': 'slideInLeft 1s ease-out',
+                    'slideInRight': 'slideInRight 1s ease-out',
+                    'pulse-slow': 'pulse 3s infinite',
+                },
+                keyframes: {
+                    float: {
+                        '0%, 100%': { transform: 'translateY(0px)' },
+                        '50%': { transform: 'translateY(-10px)' },
+                    },
+                    fadeInUp: {
+                        '0%': { opacity: '0', transform: 'translateY(30px)' },
+                        '100%': { opacity: '1', transform: 'translateY(0)' },
+                    },
+                    slideInLeft: {
+                        '0%': { opacity: '0', transform: 'translateX(-30px)' },
+                        '100%': { opacity: '1', transform: 'translateX(0)' },
+                    },
+                    slideInRight: {
+                        '0%': { opacity: '0', transform: 'translateX(30px)' },
+                        '100%': { opacity: '1', transform: 'translateX(0)' },
+                    }
+                }
+            }
+        }
+    };
+    </script>
+    <style>
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+        }
+        
+        .glass-strong {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.08);
+        }
+        
+        .glass-subtle {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.03);
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #ffffff 0%, #fafafa 50%, #ffffff 100%);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #333333 0%, #666666 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+
+        .floating-nav {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+        }
+
+        @media (max-width: 768px) {
+            .floating-nav {
+                top: 10px;
+                left: 10px;
+                right: 10px;
+                transform: none;
+                width: calc(100% - 20px);
+            }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .animate-on-scroll.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hover-glow:hover {
+            box-shadow: 0 20px 60px 0 rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="font-inter gradient-bg min-h-screen smooth-scroll">
+    
+    <!-- Floating Navigation -->
+    <nav class="floating-nav">
+        <div class="glass rounded-full px-6 py-3">
+            <div class="flex items-center justify-center space-x-8">
+                <a href="#hero" class="text-gray-700 hover:text-gray-900 transition-colors text-sm font-medium">Home</a>
+                <a href="#projects" class="text-gray-700 hover:text-gray-900 transition-colors text-sm font-medium">Projects</a>
+                <a href="#about" class="text-gray-700 hover:text-gray-900 transition-colors text-sm font-medium">About</a>
+                <a href="#contact" class="text-gray-700 hover:text-gray-900 transition-colors text-sm font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen flex items-center justify-center relative overflow-hidden px-4">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-30">
+            <div class="absolute top-20 left-10 w-2 h-2 bg-gray-300 rounded-full animate-pulse-slow"></div>
+            <div class="absolute top-40 right-20 w-3 h-3 bg-gray-400 rounded-full animate-pulse-slow" style="animation-delay: 1s;"></div>
+            <div class="absolute bottom-40 left-20 w-1 h-1 bg-gray-300 rounded-full animate-pulse-slow" style="animation-delay: 2s;"></div>
+            <div class="absolute bottom-20 right-10 w-2 h-2 bg-gray-400 rounded-full animate-pulse-slow" style="animation-delay: 3s;"></div>
+        </div>
+        
+        <div class="text-center max-w-4xl mx-auto">
+            <!-- Profile Image Placeholder -->
+            <div class="glass-strong w-32 h-32 rounded-full mx-auto mb-8 flex items-center justify-center animate-float">
+                <i class="fas fa-microchip text-4xl text-gray-600"></i>
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl font-bold text-gradient mb-6 animate-fadeInUp">
+                Kshetrimayum Ujal Singh
+            </h1>
+            
+            <div class="glass rounded-2xl p-8 mb-8 max-w-2xl mx-auto animate-fadeInUp" style="animation-delay: 0.2s;">
+                <h2 class="text-2xl md:text-3xl font-semibold text-gray-800 mb-4">
+                    IoT Engineer & Solutions Architect
+                </h2>
+                <p class="text-gray-600 text-lg leading-relaxed">
+                    3+ years of experience in end-to-end industrial automation solutions. Expert in Modbus, LoRaWAN, MQTT, and cloud integrations.
+                </p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row gap-4 justify-center items-center animate-fadeInUp" style="animation-delay: 0.4s;">
+                <a href="#projects" class="glass-strong hover-glow px-8 py-4 rounded-full text-gray-800 font-medium transition-all inline-flex items-center">
+                    <i class="fas fa-code mr-2"></i>
+                    View My Work
+                </a>
+                <a href="mailto:ujalsingh1997@gmail.com" class="glass hover-glow px-8 py-4 rounded-full text-gray-700 font-medium transition-all inline-flex items-center">
+                    <i class="fas fa-envelope mr-2"></i>
+                    Get In Touch
+                </a>
+            </div>
+            
+            <!-- Skills Preview -->
+            <div class="mt-12 animate-fadeInUp" style="animation-delay: 0.6s;">
+                <div class="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto">
+                    <span class="glass-subtle px-4 py-2 rounded-full text-sm text-gray-700">Python</span>
+                    <span class="glass-subtle px-4 py-2 rounded-full text-sm text-gray-700">LoRaWAN</span>
+                    <span class="glass-subtle px-4 py-2 rounded-full text-sm text-gray-700">AWS IoT</span>
+                    <span class="glass-subtle px-4 py-2 rounded-full text-sm text-gray-700">Modbus</span>
+                    <span class="glass-subtle px-4 py-2 rounded-full text-sm text-gray-700">MQTT</span>
+                    <span class="glass-subtle px-4 py-2 rounded-full text-sm text-gray-700">ThingsBoard</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <div class="glass-subtle w-8 h-12 rounded-full flex items-end justify-center pb-2">
+                <div class="w-1 h-3 bg-gray-400 rounded-full animate-pulse"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-4xl md:text-5xl font-bold text-gradient mb-6">Featured Projects</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Showcasing my expertise in IoT solutions, industrial automation, and cloud integrations
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Project 1: Energeia Microgrid -->
+                <div class="glass-strong rounded-3xl p-8 hover-glow animate-on-scroll">
+                    <div class="mb-6">
+                        <div class="glass w-16 h-16 rounded-2xl flex items-center justify-center mb-4">
+                            <i class="fas fa-bolt text-2xl text-gray-600"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">Industrial Energy Monitoring System</h3>
+                        <p class="text-gray-600 mb-4">
+                            Integrated 58+ RS485 meters at a forging plant EMS in Noida. Built real-time SCADA-style dashboards for comprehensive energy monitoring.
+                        </p>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="glass-subtle px-3 py-1 rounded-full text-xs text-gray-600">Modbus RS485</span>
+                        <span class="glass-subtle px-3 py-1 rounded-full text-xs text-gray-600">SCADA</span>
+                        <span class="glass-subtle px-3 py-1 rounded-full text-xs text-gray-600">Energy Monitoring</span>
+                        <span class="glass-subtle px-3 py-1 rounded-full text-xs text-gray-600">Industrial IoT</span>
+                    </div>
+                    
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-gray-500">Energeia Microgrid • 2024</span>
+                        <a href="https://www.energeia.in/case-study/forging-plant-energy-monitoring-system-noida" target="_blank" class="glass hover-glow px-4 py-2 rounded-full text-sm font-medium text-gray-700 transition-all">
+                            <i class="fas fa-external-link-alt mr-1"></i>
+                            Case Study
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 2: LoRaWAN Water Treatment -->
+                <div class="glass-strong rounded-3xl p-8 hover-glow animate-on-scroll">
+                    <div class="mb-6">
+                        <div class="glass w-16 h-16 rounded-2xl flex items-center justify-center mb-4">
+                            <i class="fas fa-water text-2xl text-gray-600"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">LoRaWAN Water Treatment Monitoring</h3>
+                        <p class="text-gray-600 mb-4">
+                            Led LoRaWAN-based water treatment monitoring across Andaman & Islands. Automated ChirpStack deployment using Python & Docker.
+                        </p>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="glass-subtle px-3 py-1 rounded-full text-xs text-gray-600">LoRaWAN</span>
+                        <span class="glass-subtle px-3 py-1 rounded-full text-xs text-gray-600">ChirpStack</span>
+                        <span class="glass-subtle px-3 py-1 rounded-full text-xs text-gray-600">Docker</span>
+                        <span class="glass-subtle px-3 py-1 rounded-full text-xs text-gray-600">Water Quality</span>
+                    </div>
+                    
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-gray-500">Nibiaa Devices • 2022-2024</span>
+                        <div class="glass hover-glow px-4 py-2 rounded-full text-sm font-medium text-gray-700">
+                            <i class="fas fa-award mr-1"></i>
+                            60% Faster Rollout
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3: Helium Network Mapper -->
+                <div class="glass-strong rounded-3xl p-8 hover-glow animate-on-scroll">
+                    <div class="mb-6">
+                        <div class="glass w-16 h-16 rounded-2xl flex items-center justify-center mb-4">
+                            <i class="fas fa-network-wired text-2xl text-gray-600"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">Helium Network Mapper</h3>
+                        <p class="text-gray-600 mb-4">
+                            Developed Flask-based Helium Network Mapper for coverage diagnostics. Optimized MQTT/LoRa pipelines across industrial energy systems.
+                        </p>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="glass-subtle px-3 py-1 rounded-full text-xs text-gray-600">Flask</span>
+                        <span class="glass-subtle px-3 py-1 rounded-full text-xs text-gray-600">Network Mapping</span>
+                        <span class="glass-subtle px-3 py-1 rounded-full text-xs text-gray-600">MQTT</span>
+                        <span class="glass-subtle px-3 py-1 rounded-full text-xs text-gray-600">Coverage Analysis</span>
+                    </div>
+                    
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-gray-500">Freelance • 2022-Present</span>
+                        <div class="glass hover-glow px-4 py-2 rounded-full text-sm font-medium text-gray-700">
+                            <i class="fas fa-map mr-1"></i>
+                            Network Tool
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 4: Asset Tracking Solution -->
+                <div class="glass-strong rounded-3xl p-8 hover-glow animate-on-scroll">
+                    <div class="mb-6">
+                        <div class="glass w-16 h-16 rounded-2xl flex items-center justify-center mb-4">
+                            <i class="fas fa-map-marker-alt text-2xl text-gray-600"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">Golf Cart Asset Tracking</h3>
+                        <p class="text-gray-600 mb-4">
+                            Created IoT solution for asset tracking and golf cart management for Singapore client. Integrated ThingsBoard with Stripe API for billing.
+                        </p>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="glass-subtle px-3 py-1 rounded-full text-xs text-gray-600">Asset Tracking</span>
+                        <span class="glass-subtle px-3 py-1 rounded-full text-xs text-gray-600">ThingsBoard</span>
+                        <span class="glass-subtle px-3 py-1 rounded-full text-xs text-gray-600">Stripe API</span>
+                        <span class="glass-subtle px-3 py-1 rounded-full text-xs text-gray-600">n8n</span>
+                    </div>
+                    
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-gray-500">International Client • 2023</span>
+                        <div class="glass hover-glow px-4 py-2 rounded-full text-sm font-medium text-gray-700">
+                            <i class="fas fa-globe mr-1"></i>
+                            Singapore
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- View More Projects Button -->
+            <div class="text-center mt-12 animate-on-scroll">
+                <button class="glass-strong hover-glow px-8 py-4 rounded-full text-gray-800 font-medium transition-all inline-flex items-center">
+                    <i class="fas fa-plus mr-2"></i>
+                    View More Projects
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-4xl md:text-5xl font-bold text-gradient mb-6">About Me</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Passionate IoT engineer with expertise in industrial automation and cloud-based solutions
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Profile Content -->
+                <div class="animate-on-scroll">
+                    <div class="glass-strong rounded-3xl p-8">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Professional Journey</h3>
+                        
+                        <!-- Experience Timeline -->
+                        <div class="space-y-6">
+                            <div class="glass rounded-2xl p-6">
+                                <div class="flex items-start space-x-4">
+                                    <div class="glass-subtle w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-building text-gray-600"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-800">IoT Engineer</h4>
+                                        <p class="text-gray-600 text-sm mb-2">Energeia Microgrid Pvt Ltd • Jul 2024 - Present</p>
+                                        <p class="text-gray-600 text-sm">Leading industrial automation projects and energy monitoring systems across India.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="glass rounded-2xl p-6">
+                                <div class="flex items-start space-x-4">
+                                    <div class="glass-subtle w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-cogs text-gray-600"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-800">IoT Engineer</h4>
+                                        <p class="text-gray-600 text-sm mb-2">Nibiaa Devices Pvt Ltd • Jun 2022 - Jun 2024</p>
+                                        <p class="text-gray-600 text-sm">Specialized in LoRaWAN deployments and water treatment monitoring systems.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="glass rounded-2xl p-6">
+                                <div class="flex items-start space-x-4">
+                                    <div class="glass-subtle w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-laptop-code text-gray-600"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-800">IoT Solutions Architect</h4>
+                                        <p class="text-gray-600 text-sm mb-2">Freelance • Jun 2022 - Present</p>
+                                        <p class="text-gray-600 text-sm">Developing embedded firmware, cloud integrations, and custom IoT solutions globally.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Education -->
+                        <div class="mt-8">
+                            <h4 class="font-semibold text-gray-800 mb-4">Education</h4>
+                            <div class="glass rounded-2xl p-4">
+                                <div class="flex items-center space-x-3">
+                                    <div class="glass-subtle w-10 h-10 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-graduation-cap text-gray-600"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-medium text-gray-800">B.E. Computer Science Engineering</h5>
+                                        <p class="text-gray-600 text-sm">Anna University • 2020 • First Division</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Skills Grid -->
+                <div class="animate-on-scroll">
+                    <div class="glass-strong rounded-3xl p-8">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Technical Skills</h3>
+                        
+                        <!-- Programming Languages -->
+                        <div class="mb-8">
+                            <h4 class="font-semibold text-gray-700 mb-3">Languages</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="glass px-4 py-2 rounded-full text-sm text-gray-700">Python</span>
+                                <span class="glass px-4 py-2 rounded-full text-sm text-gray-700">C++</span>
+                                <span class="glass px-4 py-2 rounded-full text-sm text-gray-700">JavaScript</span>
+                                <span class="glass px-4 py-2 rounded-full text-sm text-gray-700">Shell</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Protocols -->
+                        <div class="mb-8">
+                            <h4 class="font-semibold text-gray-700 mb-3">Protocols</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="glass px-4 py-2 rounded-full text-sm text-gray-700">LoRaWAN</span>
+                                <span class="glass px-4 py-2 rounded-full text-sm text-gray-700">Modbus RS485</span>
+                                <span class="glass px-4 py-2 rounded-full text-sm text-gray-700">MQTT</span>
+                                <span class="glass px-4 py-2 rounded-full text-sm text-gray-700">TCP/IP</span>
+                                <span class="glass px-4 py-2 rounded-full text-sm text-gray-700">BLE</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Cloud & DevOps -->
+                        <div class="mb-8">
+                            <h4 class="font-semibold text-gray-700 mb-3">Cloud & DevOps</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="glass px-4 py-2 rounded-full text-sm text-gray-700">AWS IoT</span>
+                                <span class="glass px-4 py-2 rounded-full text-sm text-gray-700">DigitalOcean</span>
+                                <span class="glass px-4 py-2 rounded-full text-sm text-gray-700">Azure</span>
+                                <span class="glass px-4 py-2 rounded-full text-sm text-gray-700">Docker</span>
+                                <span class="glass px-4 py-2 rounded-full text-sm text-gray-700">Terraform</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Platforms -->
+                        <div class="mb-8">
+                            <h4 class="font-semibold text-gray-700 mb-3">Platforms</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="glass px-4 py-2 rounded-full text-sm text-gray-700">ThingsBoard</span>
+                                <span class="glass px-4 py-2 rounded-full text-sm text-gray-700">ChirpStack</span>
+                                <span class="glass px-4 py-2 rounded-full text-sm text-gray-700">Node-RED</span>
+                                <span class="glass px-4 py-2 rounded-full text-sm text-gray-700">n8n</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Certifications -->
+                        <div>
+                            <h4 class="font-semibold text-gray-700 mb-3">Certifications</h4>
+                            <div class="space-y-2">
+                                <div class="glass-subtle rounded-lg p-3">
+                                    <p class="text-sm text-gray-700"><i class="fas fa-certificate mr-2"></i>AWS IoT Core - Getting Started (2025)</p>
+                                </div>
+                                <div class="glass-subtle rounded-lg p-3">
+                                    <p class="text-sm text-gray-700"><i class="fas fa-shield-alt mr-2"></i>Cybersecurity Fundamentals - Google</p>
+                                </div>
+                                <div class="glass-subtle rounded-lg p-3">
+                                    <p class="text-sm text-gray-700"><i class="fas fa-code mr-2"></i>Web Development Bootcamp - Udemy</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-4xl md:text-5xl font-bold text-gradient mb-6">Let's Connect</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Ready to discuss IoT solutions or potential collaborations? I'd love to hear from you.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Contact Info -->
+                <div class="animate-on-scroll">
+                    <div class="glass-strong rounded-3xl p-8">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Get In Touch</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-center space-x-4">
+                                <div class="glass w-12 h-12 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-envelope text-gray-600"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium text-gray-800">Email</p>
+                                    <a href="mailto:ujalsingh1997@gmail.com" class="text-gray-600 hover:text-gray-800 transition-colors">ujalsingh1997@gmail.com</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-4">
+                                <div class="glass w-12 h-12 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-phone text-gray-600"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium text-gray-800">Phone</p>
+                                    <a href="tel:+916009857163" class="text-gray-600 hover:text-gray-800 transition-colors">+91 6009857163</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-4">
+                                <div class="glass w-12 h-12 rounded-full flex items-center justify-center">
+                                    <i class="fab fa-linkedin text-gray-600"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium text-gray-800">LinkedIn</p>
+                                    <a href="https://www.linkedin.com/in/kshetrimayum-ujal-singh-b41860228/" target="_blank" class="text-gray-600 hover:text-gray-800 transition-colors">Connect with me</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-4">
+                                <div class="glass w-12 h-12 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-map-marker-alt text-gray-600"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium text-gray-800">Location</p>
+                                    <p class="text-gray-600">Delhi, India</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Social Links -->
+                        <div class="mt-8 pt-6 border-t border-gray-200">
+                            <p class="text-sm text-gray-600 mb-4">Follow me on</p>
+                            <div class="flex space-x-3">
+                                <a href="https://www.linkedin.com/in/kshetrimayum-ujal-singh-b41860228/" target="_blank" class="glass-subtle hover-glow w-10 h-10 rounded-full flex items-center justify-center transition-all">
+                                    <i class="fab fa-linkedin text-gray-600"></i>
+                                </a>
+                                <a href="mailto:ujalsingh1997@gmail.com" class="glass-subtle hover-glow w-10 h-10 rounded-full flex items-center justify-center transition-all">
+                                    <i class="fas fa-envelope text-gray-600"></i>
+                                </a>
+                                <a href="#" class="glass-subtle hover-glow w-10 h-10 rounded-full flex items-center justify-center transition-all">
+                                    <i class="fab fa-github text-gray-600"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="animate-on-scroll">
+                    <div class="glass-strong rounded-3xl p-8">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Send a Message</h3>
+                        
+                        <form class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Name</label>
+                                <input type="text" id="name" name="name" class="glass w-full px-4 py-3 rounded-xl border-0 focus:outline-none focus:ring-2 focus:ring-gray-300 transition-all placeholder-gray-500" placeholder="Your full name">
+                            </div>
+                            
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                                <input type="email" id="email" name="email" class="glass w-full px-4 py-3 rounded-xl border-0 focus:outline-none focus:ring-2 focus:ring-gray-300 transition-all placeholder-gray-500" placeholder="your.email@example.com">
+                            </div>
+                            
+                            <div>
+                                <label for="subject" class="block text-sm font-medium text-gray-700 mb-2">Subject</label>
+                                <input type="text" id="subject" name="subject" class="glass w-full px-4 py-3 rounded-xl border-0 focus:outline-none focus:ring-2 focus:ring-gray-300 transition-all placeholder-gray-500" placeholder="What's this about?">
+                            </div>
+                            
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                                <textarea id="message" name="message" rows="5" class="glass w-full px-4 py-3 rounded-xl border-0 focus:outline-none focus:ring-2 focus:ring-gray-300 transition-all placeholder-gray-500 resize-none" placeholder="Tell me about your project or idea..."></textarea>
+                            </div>
+                            
+                            <button type="submit" class="glass-strong hover-glow w-full px-6 py-4 rounded-xl text-gray-800 font-medium transition-all inline-flex items-center justify-center">
+                                <i class="fas fa-paper-plane mr-2"></i>
+                                Send Message
+                                <!-- TODO: Implement form submission logic -->
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="glass-strong rounded-3xl p-8">
+                <div class="flex flex-col md:flex-row items-center justify-between">
+                    <div class="text-center md:text-left mb-4 md:mb-0">
+                        <h3 class="text-xl font-bold text-gray-800">Kshetrimayum Ujal Singh</h3>
+                        <p class="text-gray-600">IoT Engineer & Solutions Architect</p>
+                    </div>
+                    
+                    <div class="flex items-center space-x-6">
+                        <a href="#hero" class="text-gray-600 hover:text-gray-800 transition-colors">Home</a>
+                        <a href="#projects" class="text-gray-600 hover:text-gray-800 transition-colors">Projects</a>
+                        <a href="#about" class="text-gray-600 hover:text-gray-800 transition-colors">About</a>
+                        <a href="#contact" class="text-gray-600 hover:text-gray-800 transition-colors">Contact</a>
+                    </div>
+                </div>
+                
+                <div class="border-t border-gray-200 mt-8 pt-8 text-center">
+                    <p class="text-gray-600 text-sm">
+                        &copy; 2024 Kshetrimayum Ujal Singh. Crafted with passion for IoT innovation.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Scroll animation observer
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all elements with animate-on-scroll class
+            document.querySelectorAll('.animate-on-scroll').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Form submission (placeholder)
+            document.querySelector('form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                // TODO: Implement actual form submission logic
+                alert('Thank you for your message! This is a demo - in a real implementation, this would send the message.');
+            });
+
+            // Add some interactive hover effects
+            document.querySelectorAll('.glass, .glass-strong, .glass-subtle').forEach(element => {
+                element.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-2px)';
+                    this.style.transition = 'all 0.3s ease';
+                });
+                
+                element.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+        })();
+    </script>
+</body>
+</html>

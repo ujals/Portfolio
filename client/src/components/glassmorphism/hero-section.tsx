@@ -1,111 +1,110 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Mail, ExternalLink } from "lucide-react";
+import { ArrowRight, Mail } from "lucide-react";
 
-export default function HeroSection() {
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
+export function HeroSection() {
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
-      {/* Floating background elements */}
-      <div className="absolute inset-0">
-        <motion.div
-          animate={{ y: [0, -20, 0] }}
-          transition={{ duration: 6, repeat: Infinity }}
-          className="absolute top-20 left-20 w-32 h-32 glass-floating rounded-full opacity-60"
-        />
-        <motion.div
-          animate={{ y: [0, -30, 0] }}
-          transition={{ duration: 8, repeat: Infinity, delay: -2 }}
-          className="absolute top-40 right-32 w-24 h-24 glass-floating rounded-full opacity-40"
-        />
-        <motion.div
-          animate={{ y: [0, -25, 0] }}
-          transition={{ duration: 7, repeat: Infinity, delay: -4 }}
-          className="absolute bottom-32 left-1/3 w-20 h-20 glass-floating rounded-full opacity-50"
-        />
-      </div>
-
+    <section id="home" className="min-h-screen flex items-start justify-start relative overflow-hidden pt-24 md:pt-32">
       <div className="container mx-auto px-6 text-center z-10">
+        {/* Profile Picture */}
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="hero-glass-panel rounded-3xl p-12 max-w-4xl mx-auto"
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ delay: 0.3, duration: 0.5 }}
+          className="mb-6"
         >
-          <motion.div
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ delay: 0.3, duration: 0.5 }}
-            className="mb-8"
-          >
-            <div className="w-32 h-32 rounded-full mx-auto mb-6 glass-card overflow-hidden">
+          <div className="w-40 h-40 md:w-48 md:h-48 mx-auto relative group">
+            <div className="relative w-full h-full">
               <img
-                src="@assets/1719932364779_1756105648953.jpg"
-                alt="Kshetrimayum Ujal Singh - IoT Engineer"
-                className="w-full h-full object-cover"
-                data-testid="hero-profile-image"
+                src="https://media.licdn.com/dms/image/v2/D5603AQEKyzBi8MRacQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1719932364779?e=1758758400&v=beta&t=gmT56HkmrIZeFqIt9ykX7hGD-VRN-8eMMuHyxkz4wko"
+                alt="Profile Photo"
+                className="w-full h-full object-cover rounded-full relative z-10 transition-transform duration-300 group-hover:scale-110"
+                style={{
+                  objectPosition: 'center',
+                  transform: 'scale(1.1)'
+                }}
               />
+              
+              {/* Glass Layer */}
+              <div className="absolute inset-0 rounded-full overflow-hidden opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div 
+                  className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-transparent rounded-full"
+                  style={{
+                    backdropFilter: 'blur(10px)',
+                    WebkitBackdropFilter: 'blur(10px)'
+                  }}
+                >
+                  <div 
+                    className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                    style={{
+                      animation: 'shimmer 3s infinite linear',
+                      backgroundSize: '200% 200%',
+                      transform: 'rotate(30deg) translateX(-25%) translateY(-25%)',
+                      width: '200%',
+                      height: '200%'
+                    }}
+                  />
+                </div>
+              </div>
             </div>
-          </motion.div>
+          </div>
+        </motion.div>
 
-          <motion.h1
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
-            className="text-5xl md:text-7xl font-extralight mb-6 hero-gradient"
-            data-testid="hero-title"
-          >
-            Kshetrimayum Ujal Singh
-          </motion.h1>
+        {/* Name */}
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5 }}
+          className="text-4xl md:text-6xl font-extralight mb-2 text-gray-900"
+          data-testid="hero-title"
+        >
+          Kshetrimayum Ujal Singh
+        </motion.h1>
 
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.7 }}
-            className="text-xl md:text-2xl font-light text-gray-600 mb-4"
-            data-testid="hero-subtitle"
-          >
-            IoT Engineer & Solutions Architect
-          </motion.p>
+        {/* Title */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6 }}
+          className="text-xl md:text-2xl font-light text-gray-800 mb-4"
+          data-testid="hero-subtitle"
+        >
+          IoT Engineer & Solutions Architect
+        </motion.p>
 
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.9 }}
-            className="text-lg font-light text-gray-500 mb-8 max-w-2xl mx-auto"
-            data-testid="hero-description"
-          >
-            3+ years of experience in end-to-end industrial automation solutions. Expert in Modbus, LoRaWAN, MQTT, and cloud integrations.
-          </motion.p>
+        {/* Experience */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.7 }}
+          className="text-lg font-light text-gray-600 mb-8 max-w-2xl mx-auto"
+          data-testid="hero-description"
+        >
+          3+ years of experience in end-to-end industrial automation solutions. Expert in Modbus, LoRaWAN, MQTT, and cloud integrations.
+        </motion.p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.1 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+        {/* Buttons */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.9 }}
+          className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+        >
+          <a
+            href="#projects"
+            className="bg-white text-gray-800 hover:bg-gray-100 px-8 py-3 rounded-full font-medium shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2"
+            data-testid="button-view-work"
           >
-            <button
-              onClick={() => scrollToSection("projects")}
-              className="glass-button group"
-              data-testid="button-view-work"
-            >
-              View My Work
-              <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </button>
-            <button
-              onClick={() => scrollToSection("contact")}
-              className="glass-button group"
-              data-testid="button-contact"
-            >
-              Get In Touch
-              <Mail className="ml-2 w-4 h-4" />
-            </button>
-          </motion.div>
+            View My Work
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          </a>
+          <a
+            href="#contact"
+            className="bg-white text-gray-800 hover:bg-gray-100 px-8 py-3 rounded-full font-medium shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2"
+            data-testid="button-contact"
+          >
+            Get In Touch
+            <Mail className="w-5 h-5" />
+          </a>
         </motion.div>
       </div>
     </section>

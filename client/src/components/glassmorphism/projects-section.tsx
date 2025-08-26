@@ -5,16 +5,16 @@ export default function ProjectsSection() {
   const projects = [
     {
       title: "Forging Plant EMS",
-      description: "Integrated 58+ RS485 meters for real-time energy monitoring with SCADA-style dashboards.",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
-      technologies: ["Modbus RS485", "SCADA", "Real-time"],
+      description: "Integrated 58+ RS485 meters for real-time energy monitoring ",
+      image: "https://cdn-ildejcp.nitrocdn.com/QKAwqLuyCXDkCJSUGVHFHpBBjhUSZqPh/assets/images/optimized/rev-3a7e48c/www.energeia.in/wp-content/uploads/2025/07/EMS-Forging-Factory-Cover-Photo.webp",
+      technologies: ["Modbus RS485", "MQTT", "Realtime"],
       link: "https://www.energeia.in/case-study/forging-plant-energy-monitoring-system-noida",
       type: "Case Study"
     },
     {
       title: "Water Treatment Monitoring",
       description: "LoRaWAN-based water quality monitoring across Andaman & Islands with real-time pH and TDS tracking.",
-      image: "https://images.unsplash.com/photo-1576086213369-97a306d36557?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
+      image: "https://teltonika-networks.com/cdn/extras/11783/enabling-control-over-a-wastewater-treatment-plantjpe.webp",
       technologies: ["LoRaWAN", "Water Quality", "IoT Sensors"],
       type: "Enterprise Project"
     },

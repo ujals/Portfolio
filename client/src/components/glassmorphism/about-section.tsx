@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Building, Cog, Laptop } from "lucide-react";
+import { Building, GraduationCap, Laptop, BookOpen } from "lucide-react";
 
 export default function AboutSection() {
   const experiences = [
@@ -22,7 +22,7 @@ export default function AboutSection() {
       period: "Jun 2022 - Jun 2024", 
       location: "Imphal, India",
       description: "Led LoRaWAN infrastructure and water treatment monitoring systems.",
-      icon: Cog,
+      icon: Laptop,
       highlights: [
         "Led LoRaWAN-based water treatment monitoring across Andaman & Islands",
         "Automated ChirpStack deployment using Python & Docker (60% faster rollout)",
@@ -44,6 +44,30 @@ export default function AboutSection() {
     }
   ];
 
+  const education = [
+    {
+      degree: "Bachelor of Computer Science Engineering",
+      institution: "Anna University",
+      period: "2016 - 2020",
+      grade: "1st Division",
+      icon: GraduationCap,
+      highlights: [
+        "Ranked in top 1% of State Board Examination",
+        "Selected for INSPIRE Award"
+      ]
+    },
+    {
+      course: "Core Expertise",
+      icon: BookOpen,
+      highlights: [
+        "End-to-end industrial automation solutions",
+        "LoRaWAN, Modbus RS485, MQTT protocols",
+        "Cloud integrations (AWS, DigitalOcean)",
+        "Scalable IIoT systems using Docker & ThingsBoard"
+      ]
+    }
+  ];
+
   return (
     <section id="about" className="py-20 relative">
       <div className="container mx-auto px-6">
@@ -61,67 +85,92 @@ export default function AboutSection() {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start max-w-6xl mx-auto">
+        <div className="grid gap-8 max-w-6xl mx-auto">
+          {/* Experience Card */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
             className="glass-panel rounded-2xl p-8"
           >
-            <h3 className="text-2xl font-light text-gray-800 mb-6" data-testid="summary-title">
-              Professional Summary
+            <h3 className="text-2xl font-light text-gray-800 mb-6 flex items-center gap-2">
+              <Building className="w-6 h-6 text-gray-600" />
+              Professional Experience
             </h3>
             <div className="space-y-6">
-              <div className="glass-card rounded-xl p-6">
-                <h4 className="font-light text-gray-800 mb-3">Education</h4>
-                <div className="space-y-2 text-gray-600">
-                  <p><strong>Bachelor of Computer Science Engineering</strong></p>
-                  <p>Anna University | 2020 | 1st Division</p>
-                  <p className="text-sm">Ranked in top 1% of State Board Examination; selected for INSPIRE Award</p>
+              {experiences.map((exp, index) => (
+                <div key={index} className="glass-card rounded-xl p-6 hover:shadow-lg transition-shadow">
+                  <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-3">
+                    <div>
+                      <h4 className="text-lg font-medium text-gray-800">{exp.role}</h4>
+                      <p className="text-gray-600">{exp.company}</p>
+                    </div>
+                    <div className="text-sm text-gray-500">
+                      <p>{exp.period}</p>
+                      <p>{exp.location}</p>
+                    </div>
+                  </div>
+                  <p className="text-gray-600 mb-3">{exp.description}</p>
+                  <ul className="space-y-1.5">
+                    {exp.highlights.map((highlight, i) => (
+                      <li key={i} className="flex items-start gap-2 text-gray-600">
+                        <span className="text-gray-400">•</span>
+                        <span>{highlight}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-              </div>
-              <div className="glass-card rounded-xl p-6">
-                <h4 className="font-light text-gray-800 mb-3">Core Expertise</h4>
-                <ul className="text-gray-600 space-y-2">
-                  <li>• End-to-end industrial automation solutions</li>
-                  <li>• LoRaWAN, Modbus RS485, MQTT protocols</li>
-                  <li>• Cloud integrations (AWS, DigitalOcean)</li>
-                  <li>• Scalable IIoT systems using Docker & ThingsBoard</li>
-                </ul>
-              </div>
+              ))}
             </div>
           </motion.div>
 
-          <div className="space-y-6">
-            {experiences.map((exp, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="glass-card rounded-xl p-6 hover:scale-105 transition-transform duration-300"
-                data-testid={`experience-card-${index}`}
-              >
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 glass-panel rounded-full flex items-center justify-center flex-shrink-0">
-                    <exp.icon className="w-5 h-5 text-gray-600" />
+          {/* Education & Expertise Card */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="glass-panel rounded-2xl p-8"
+          >
+            <h3 className="text-2xl font-light text-gray-800 mb-6 flex items-center gap-2">
+              <GraduationCap className="w-6 h-6 text-gray-600" />
+              Education & Expertise
+            </h3>
+            <div className="grid md:grid-cols-2 gap-6">
+              {education.map((edu, index) => (
+                <div key={index} className="glass-card rounded-xl p-6 hover:shadow-lg transition-shadow">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="p-2 bg-gray-100 rounded-lg">
+                      <edu.icon className="w-5 h-5 text-gray-600" />
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-medium text-gray-800">
+                        {edu.degree || edu.course}
+                      </h4>
+                      {edu.institution && (
+                        <p className="text-gray-600 text-sm">{edu.institution}</p>
+                      )}
+                      {edu.period && (
+                        <p className="text-sm text-gray-500">{edu.period}</p>
+                      )}
+                      {edu.grade && (
+                        <p className="text-sm text-gray-500">{edu.grade}</p>
+                      )}
+                    </div>
                   </div>
-                  <div className="flex-1">
-                    <h4 className="font-light text-gray-800">{exp.company}</h4>
-                    <p className="text-sm text-gray-600 font-light">{exp.role}</p>
-                    <p className="text-sm text-gray-500 mb-2">{exp.period} | {exp.location}</p>
-                    <p className="text-gray-600 text-sm mb-3">{exp.description}</p>
-                    <ul className="text-xs text-gray-500 space-y-1">
-                      {exp.highlights.map((highlight, i) => (
-                        <li key={i}>• {highlight}</li>
-                      ))}
-                    </ul>
-                  </div>
+                  <ul className="space-y-1.5 mt-3">
+                    {edu.highlights.map((highlight, i) => (
+                      <li key={i} className="flex items-start gap-2 text-gray-600">
+                        <span className="text-gray-400 mt-1">•</span>
+                        <span className="text-sm">{highlight}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-              </motion.div>
-            ))}
-          </div>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>
